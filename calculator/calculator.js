@@ -24,12 +24,12 @@ class Calculator{
     operate(firstNumber, secondNumber,operator){
         debugger;
         if(operator == "add"){
-            this.value = add(firstNumber, secondNumber);
+            this.value = add();
         } else if (operator == "subtract") {
             this.value = subtract(firstNumber, secondNumber);
 
         } else if (operator == "multiply") {
-            this.value = multiply(firstNumber, secondNumber);
+            this.value = multiply();
         } else if(operator == "divide"){
             if(secondNumber === 0){
                 alert("Please enter a non zero second number as division with zero is undefines");
@@ -44,8 +44,8 @@ class Calculator{
   //  attemptedDivideByZero = false;
 
     // perform addition operation
-    add(a, b){
-        return a + b;
+    add(){
+        return (this.firstNumber + this.secondNumber);
     }
 
     // perform subtraction operation
@@ -54,8 +54,8 @@ class Calculator{
     }
 
     // perform multiplication operation
-    multiply(a, b){
-        return a * b;
+    multiply(){
+        return (this.firstNumber * this.secondNumber);
     }
 
     // perform divide operation
