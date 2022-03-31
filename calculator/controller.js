@@ -9,17 +9,17 @@ var calc = "";
 
 function CreateCalculator() {
     var firstValue = document.getElementById('firstnumber').value;
-    
-    var firstNumber = parseInt(firstValue);
     var secondValue = document.getElementById('secondnumber').value;
-    var secondNumber = parseInt(secondValue);
     if (isNaN(firstValue) || isNaN(secondValue)){
-        alert("Please Provide the input as a number");
+        alert("Please provide the input as a number");
         return false;
+     }else
+     {
+        var firstNumber = parseInt(firstValue);
+        var secondNumber = parseInt(secondValue);
      }
     var operator = getOperator();
     calc = new Calculator(firstNumber,secondNumber,operator,value);
-    debugger;
     var finalResult = calculate(firstNumber,secondNumber,operator);
     var label = calc.getAction();
     var finalMessage = `The result of ${label}ing ${firstNumber} and ${secondNumber} is ${finalResult}`;
@@ -29,9 +29,7 @@ function CreateCalculator() {
 // perform a calculation when the operator button is clicked
 function calculate(firstNumber , secondNumber,operator) {
      value = calc.operate(firstNumber,secondNumber,operator);
-
-     return value;
-    
+     return value;  
 }
 
 /**
@@ -45,7 +43,6 @@ function updateResultText(value) {
 
 // should clear input text values and focus the first number input
 function clearValues() {
-    debugger;
     document.getElementById('mainContent').reset();
 }
 
