@@ -1,28 +1,28 @@
 class Calculator{
 
-    constructor(firstNumber, secondNumber, operator,value) {
+    constructor(firstNumber, secondNumber, operator) {
         this.firstNumber = firstNumber;
         this.secondNumber = secondNumber;
         this.operator = operator;
-        this.value = value;
+        this.value = 0;
     }
 
     // determine the current operation's label
-   getAction(){
-    
-        if (document.getElementById('add').checked) {
-            this.operator = document.getElementById('add').value;
-        } else if (document.getElementById('subtract').checked) {
-            this.operator = document.getElementById('subtract').value;
-        } else if (document.getElementById('multiply').checked) {
-            this.operator = document.getElementById('multiply').value;
-        } else {
-            this.operator = "divid";
-        }
-        return this.operator;
+   getAction(operator){
+       if(operator === "add"){
+           return "adding";
+       }else if(operator === "subtract"){
+           return "subtracting"
+       }else if(operator === "multiply"){
+        return "multiplying";
+       }else{
+           return "dividing";
+       }
+             
     }
     // perform a calculation based on the currently selected operation
     operate(firstNumber, secondNumber,operator){
+        debugger;
         if(this.operator == 'add'){
             this.value = this.add(firstNumber, secondNumber);
         } else if (this.operator == 'subtract') {
