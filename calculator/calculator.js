@@ -45,7 +45,7 @@ class Calculator{
 
     // perform addition operation
     add(){
-        return (this.firstNumber + this.secondNumber);
+        firstNumber + secondNumber;
     }
 
     // perform subtraction operation
