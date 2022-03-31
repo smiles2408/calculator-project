@@ -24,21 +24,21 @@ class Calculator{
     // perform a calculation based on the currently selected operation
     operate(firstNumber, secondNumber,operator){
         if(this.operator == 'add'){
-            value = this.add(firstNumber, secondNumber);
+            this.value = this.add(firstNumber, secondNumber);
         } else if (this.operator == 'subtract') {
-            value = this.subtract(firstNumber, secondNumber);
+            this.value = this.subtract(firstNumber, secondNumber);
 
         } else if (this.operator == 'multiply') {
-            value = this.multiply(firstNumber, secondNumber);
+            this.value = this.multiply(firstNumber, secondNumber);
         } else{
-            if(secondNumber == 0){
+            if(secondNumber === 0){
                 alert("Please enter a non zero second number as division with zero is undefines");
             }else{
-                value = this.divide(firstNumber, secondNumber);
+                this.value = this.divide(firstNumber, secondNumber);
             }     
         }
 
-        return Math.round(value * 100)/100;
+        return Math.round(this.value * 100)/100;
     }
 
   //  attemptedDivideByZero = false;
