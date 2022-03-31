@@ -23,46 +23,50 @@ class Calculator{
     // perform a calculation based on the currently selected operation
     operate(firstNumber, secondNumber,operator){
         debugger;
+    
         if(operator == "add"){
-            add(firstNumber,secondNumber);
+            this.value = this.add(firstNumber, secondNumber);
         } else if (operator == "subtract") {
-            subtract(firstNumber, secondNumber);
+            this.value = this.subtract(firstNumber, secondNumber);
 
-        } else if (operator == "multiply") {
-            multiply(firstNumber,secondNumber);
-        } else if(operator == "divide"){
-             divide(firstNumber,secondNumber);
+        } else if (operator == 'multiply') {
+            this.value = this.multiply(firstNumber, secondNumber);
+        } else{
+            if(secondNumber === 0){
+                alert("Please enter a non zero second number as division with zero is undefines");
+                return "undefined";
+            }else{
+                this.value = this.divide(firstNumber, secondNumber);
+            }     
         }
+
+        return Math.round(this.value * 100)/100;
+    
     }
 
 
-   attemptedDivideByZero = false;
     // perform addition operation
-    add(firstNumber,secondNumber){
-        value = this.firstNumber + this.secondNumber;
+
+    add(a, b){
+        return a + b;
     }
 
     // perform subtraction operation
-    subtract(firstNumber,secondNumber){
-        value = this.firstNumber - this.secondNumber;
+    subtract(a, b){
+        return a - b;
     }
 
     // perform multiplication operation
-    multiply(firstNumber,secondNumber){
-        value = this.firstNumber * this.secondNumber;
+    multiply(a, b){
+        return a * b;
     }
 
     // perform divide operation
-    divide(firstNumber,secondNumber){     
-        if(secondNumber === 0){
-            alert("Please enter a non zero second number as division with zero is undefined");
-        }else{
-            attemptedDivideByZero = true;
-            value = this.firstNumber/this.secondNumber;
-        }        
+    divide(a, b){
+        return a / b;
     }
 }
 
 
 //DO NOT TOUCH THIS LINE OF CODE//
-let unit_test = Calculator;
+let unit_test = calculator;
