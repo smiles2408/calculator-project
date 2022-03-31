@@ -1,5 +1,4 @@
 // setup variables and get a calculator instance
-//var calc = new Calculator(firstNumber, secondNumber, operator);
 
 var operator = "";
 var value = 0;
@@ -19,10 +18,10 @@ function CreateCalculator() {
         var secondNumber = parseInt(secondValue);
      }
     var operator = getOperator();
-    calc = new Calculator(firstNumber,secondNumber,operator,value);
+    calc = new Calculator(firstNumber,secondNumber,operator);
     var finalResult = calculate(firstNumber,secondNumber,operator);
-    var label = calc.getAction();
-    var finalMessage = `The result of ${label}ing ${firstNumber} and ${secondNumber} is ${finalResult}`;
+    var label = calc.getAction(operator);
+    var finalMessage = `The result of ${label} ${firstNumber} and ${secondNumber} is ${finalResult}`;
     updateResultText(finalMessage);
 }
 
