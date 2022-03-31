@@ -4,8 +4,7 @@ var operator = "";
 var value = 0;
 var calc = "";
 
-
-
+//Function called When the equal button is clicked 
 function CreateCalculator() {
     var firstValue = document.getElementById('firstnumber').value;
     var secondValue = document.getElementById('secondnumber').value;
@@ -35,6 +34,7 @@ function calculate(firstNumber , secondNumber,operator) {
  * set the text in the result section of the UI
  * @param {*} value 
  */
+//Update the paragraph in the HTML page
 function updateResultText(value) {
     document.getElementById('final-result').innerHTML = value;
 
@@ -43,6 +43,7 @@ function updateResultText(value) {
 // should clear input text values and focus the first number input
 function clearValues() {
     document.getElementById('mainContent').reset();
+    document.getElementById('firstnumber').focus();
 }
 
 /**
@@ -50,9 +51,7 @@ function clearValues() {
  * @returns Operators
  */
 function getOperator() {
-
-    var radioValues = document.getElementsByName('calculator');
-              
+    var radioValues = document.getElementsByName('calculator');             
             for(i = 0; i < radioValues.length; i++) {
                 if(radioValues[i].checked){
                    operator =  radioValues[i].value;
