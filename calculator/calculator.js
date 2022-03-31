@@ -24,43 +24,42 @@ class Calculator{
     operate(firstNumber, secondNumber,operator){
         debugger;
         if(operator == "add"){
-            this.value = add();
+            add(firstNumber,secondNumber);
         } else if (operator == "subtract") {
-            this.value = subtract(firstNumber, secondNumber);
+            subtract(firstNumber, secondNumber);
 
         } else if (operator == "multiply") {
-            this.value = multiply();
+            multiply(firstNumber,secondNumber);
         } else if(operator == "divide"){
-            if(secondNumber === 0){
-                alert("Please enter a non zero second number as division with zero is undefines");
-            }else{
-                this.value = divide(firstNumber, secondNumber);
-            }     
+             divide(firstNumber,secondNumber);
         }
-
-        return this.value;
     }
 
-  //  attemptedDivideByZero = false;
 
+   attemptedDivideByZero = false;
     // perform addition operation
-    add(){
-        firstNumber + secondNumber;
+    add(firstNumber,secondNumber){
+        value = this.firstNumber + this.secondNumber;
     }
 
     // perform subtraction operation
-    subtract(a, b){
-        return a - b;
+    subtract(firstNumber,secondNumber){
+        value = this.firstNumber - this.secondNumber;
     }
 
     // perform multiplication operation
-    multiply(){
-        return (this.firstNumber * this.secondNumber);
+    multiply(firstNumber,secondNumber){
+        value = this.firstNumber * this.secondNumber;
     }
 
     // perform divide operation
-    divide(a, b){
-        return a / b;
+    divide(firstNumber,secondNumber){     
+        if(secondNumber === 0){
+            alert("Please enter a non zero second number as division with zero is undefined");
+        }else{
+            attemptedDivideByZero = true;
+            value = this.firstNumber/this.secondNumber;
+        }        
     }
 }
 
