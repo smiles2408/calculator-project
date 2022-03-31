@@ -18,7 +18,7 @@ function CreateCalculator() {
         return false;
      }
     var operator = getOperator();
-    calc = new Calculator(firstNumber,secondNumber,operator);
+    calc = new Calculator(firstNumber,secondNumber,operator,value);
     debugger;
     var finalResult = calculate(firstNumber,secondNumber,operator);
     var label = calc.getAction();

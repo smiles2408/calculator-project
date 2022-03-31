@@ -1,10 +1,10 @@
 class Calculator{
 
-    constructor(firstNumber, secondNumber, operator) {
+    constructor(firstNumber, secondNumber, operator,value) {
         this.firstNumber = firstNumber;
         this.secondNumber = secondNumber;
         this.operator = operator;
-        this.value = 0;
+        this.value = value;
     }
 
     // determine the current operation's label
