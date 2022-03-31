@@ -24,21 +24,21 @@ class Calculator{
     operate(firstNumber, secondNumber,operator){
         debugger;
         if(operator == "add"){
-            value = add(firstNumber, secondNumber);
+            this.value = add(firstNumber, secondNumber);
         } else if (operator == "subtract") {
-            value = subtract(firstNumber, secondNumber);
+            this.value = subtract(firstNumber, secondNumber);
 
         } else if (operator == "multiply") {
-            value = multiply(firstNumber, secondNumber);
+            this.value = multiply(firstNumber, secondNumber);
         } else if(operator == "divide"){
             if(secondNumber === 0){
                 alert("Please enter a non zero second number as division with zero is undefines");
             }else{
-                value = divide(firstNumber, secondNumber);
+                this.value = divide(firstNumber, secondNumber);
             }     
         }
 
-        return value;
+        return this.value;
     }
 
   //  attemptedDivideByZero = false;
