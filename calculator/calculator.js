@@ -1,8 +1,4 @@
-class Calculator {
-    firstNumber;
-    secondNumber;
-    operator;
-    value;
+class Calculator{
 
     constructor(firstNumber, secondNumber, operator) {
         this.firstNumber = firstNumber;
@@ -12,25 +8,62 @@ class Calculator {
     }
 
     // determine the current operation's label
-    getAction() {}
+   getAction(){
+    
+        if (document.getElementById('add').checked) {
+            this.operator = document.getElementById('add').value;
+        } else if (document.getElementById('subtract').checked) {
+            this.operator = document.getElementById('subtract').value;
+        } else if (document.getElementById('multiply').checked) {
+            this.operator = document.getElementById('multiply').value;
+        } else {
+            this.operator = "divid";
+        }
+        return this.operator;
+    }
+    // perform a calculation based on the currently selected operation
+    operate(firstNumber, secondNumber,operator){
+        if(this.operator == 'add'){
+            value = this.add(firstNumber, secondNumber);
+        } else if (this.operator == 'subtract') {
+            value = this.subtract(firstNumber, secondNumber);
 
-    // performa a calculation based on the currently selected operation
-    operate() {}
+        } else if (this.operator == 'multiply') {
+            value = this.multiply(firstNumber, secondNumber);
+        } else{
+            if(secondNumber == 0){
+                alert("Please enter a non zero second number as division with zero is undefines");
+            }else{
+                value = this.divide(firstNumber, secondNumber);
+            }     
+        }
 
-    attemptedDivideByZero = false;
+        return Math.round(value * 100)/100;
+    }
+
+  //  attemptedDivideByZero = false;
 
     // perform addition operation
-    add() {}
+    add(a, b){
+        return a + b;
+    }
 
     // perform subtraction operation
-    subtract() {}
+    subtract(a, b){
+        return a - b;
+    }
 
     // perform multiplication operation
-    multiply() {}
+    multiply(a, b){
+        return a * b;
+    }
 
     // perform divide operation
-    divide() {}
+    divide(a, b){
+        return a / b;
+    }
 }
+
 
 //DO NOT TOUCH THIS LINE OF CODE//
 let unit_test = Calculator;

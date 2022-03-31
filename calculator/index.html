@@ -3,10 +3,39 @@
     <head>
         <title>Calculator</title>
         <script type="text/javascript" src="controller.js"></script>
-        <script type="text/javascript" src="calculator.js"></script>
+        <script type="text/javascript" src="Calculator.js"></script>
         <link rel="stylesheet" type="text/css" href="calculator.css" />
     </head>
     <body>
         <!-- Fill in html here -->
+        <form id="mainContent">
+            <div>
+                <div class="input-numbers"> 
+                    <label for="firstnumber">first number</label><br>
+                    <input class="input-text" type="text" name="firstnumber" id="firstnumber" placeholder="Enter first number">
+                 </div>
+                 <div class="input-numbers">
+                    <label for="secondnumber">second number</label></br>   
+                    <input class="input-text" type="text" name="secondnumber" id="secondnumber" placeholder="Enter second number">
+                </div>
+            </div>
+            <div class="radio-button">
+                <input type="radio" id="add" name="calculator" value="add">
+                <label for="add">Add</label>
+                <input type="radio" id="subtract" name="calculator" value="subtract">
+                <label for="subtract">Subtract</label>
+                <input type="radio" id="multiply" name="calculator" value="multiply">
+                <label for="multiply">Multiply</label>
+                <input type="radio" id="divide" name="calculator" value="divide">
+                <label for="divide">Divide</label>
+            </div>
+            <div>
+                <input id="equal-button" class="buttons" type="button" value="=" onclick="CreateCalculator()">
+                <input class="buttons" type ="button" value="Clear" onclick="clearValues()">
+            </div>
+            <div>
+                <p id="final-result"></p>
+            </div>
+        </form>  
     </body>
 </html>

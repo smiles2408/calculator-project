@@ -1,20 +1,66 @@
 // setup variables and get a calculator instance
-function CreateCalculator() {}
+//var calc = new Calculator(firstNumber, secondNumber, operator);
+
+var operator = "";
+var value = 0;
+var calc = "";
+
+
+
+function CreateCalculator() {
+    var firstValue = document.getElementById('firstnumber').value;
+    
+    var firstNumber = parseInt(firstValue);
+    var secondValue = document.getElementById('secondnumber').value;
+    var secondNumber = parseInt(secondValue);
+    if (isNaN(firstValue) || isNaN(secondValue)){
+        alert("Please Provide the input as a number");
+        return false;
+     }
+    var operator = getOperator();
+    calc = new Calculator(firstNumber,secondNumber,operator);
+    debugger;
+    var finalResult = calculate(firstNumber,secondNumber,operator);
+    var label = calc.getAction();
+    var finalMessage = `The result of ${label}ing ${firstNumber} and ${secondNumber} is ${finalResult}`;
+    updateResultText(finalMessage);
+}
 
 // perform a calculation when the operator button is clicked
-function calculate() {}
+function calculate(firstNumber , secondNumber,operator) {
+     value = calc.operate(firstNumber,secondNumber,operator);
+
+     return value;
+    
+}
 
 /**
  * set the text in the result section of the UI
- * @param {*} value
+ * @param {*} value 
  */
-function updateResultText(value) {}
+function updateResultText(value) {
+    document.getElementById('final-result').innerHTML = value;
+
+}
 
 // should clear input text values and focus the first number input
-function clearValues() {}
+function clearValues() {
+    debugger;
+    document.getElementById('mainContent').reset();
+}
 
 /**
  * get the selected operator from the UI
  * @returns Operators
  */
-function getOperator() {}
+function getOperator() {
+
+    var radioValues = document.getElementsByName('calculator');
+              
+            for(i = 0; i < radioValues.length; i++) {
+                if(radioValues[i].checked){
+                   operator =  radioValues[i].value;
+                }
+            }
+            return operator;
+}

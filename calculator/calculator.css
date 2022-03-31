@@ -1,1 +1,41 @@
 /* fill in styling here */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+  }
+.input-numbers{
+    display: inline-block;
+    text-align: center;
+    line-height: 25px;
+    margin-top: 20px;
+   
+}
+.input-text{
+    margin: 10px; 
+   
+}
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 100px;
+}
+p{
+    font-size: 25px;
+}
+.buttons{
+    display: flex;
+    justify-content:center;
+    margin: 10px;
+    padding:10px;
+}
+.radio-button input[type="radio"]:checked+label {
+    font-weight: 700;
+  }
+
+  #equal-button{
+      background-color: rgb(79, 86, 219);
+  }
+.functions{
+    margin: 10px;
+}
