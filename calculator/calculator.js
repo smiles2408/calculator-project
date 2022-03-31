@@ -30,7 +30,7 @@ class Calculator{
 
         } else if (operator == "multiply") {
             value = multiply(firstNumber, secondNumber);
-        } else{
+        } else if(operator == "divide"){
             if(secondNumber === 0){
                 alert("Please enter a non zero second number as division with zero is undefines");
             }else{
