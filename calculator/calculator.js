@@ -23,22 +23,22 @@ class Calculator{
     // perform a calculation based on the currently selected operation
     operate(firstNumber, secondNumber,operator){
         debugger;
-        if(this.operator == 'add'){
-            this.value = this.add(firstNumber, secondNumber);
-        } else if (this.operator == 'subtract') {
-            this.value = this.subtract(firstNumber, secondNumber);
+        if(operator == "add"){
+            value = add(firstNumber, secondNumber);
+        } else if (operator == "subtract") {
+            value = subtract(firstNumber, secondNumber);
 
-        } else if (this.operator == 'multiply') {
-            this.value = this.multiply(firstNumber, secondNumber);
+        } else if (operator == "multiply") {
+            value = multiply(firstNumber, secondNumber);
         } else{
             if(secondNumber === 0){
                 alert("Please enter a non zero second number as division with zero is undefines");
             }else{
-                this.value = this.divide(firstNumber, secondNumber);
+                value = divide(firstNumber, secondNumber);
             }     
         }
 
-        return Math.round(this.value * 100)/100;
+        return value;
     }
 
   //  attemptedDivideByZero = false;
